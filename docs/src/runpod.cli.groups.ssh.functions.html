@@ -309,7 +309,25 @@
         </div>
 
         <div class="moduleDocstring">
-          <div><p>RunPod | CLI | SSH | Functions</p></div>
+          <div><p>RunPod | CLI | SSH | Functions</p>
+<p>This module contains functions related to SSH key management in the RunPod CLI.</p>
+<p>Functions:
+- get_ssh_key_fingerprint(public_key): Get the fingerprint of an SSH key.
+- get_user_pub_keys(): Get the current user's SSH keys.
+- generate_ssh_key_pair(filename): Generate an RSA SSH key pair and save it to disk.
+- add_ssh_key(public_key): Add an SSH public key to the current user's RunPod account.</p>
+<p>Example Usage:
+<a href="#id1"><span class="rst-problematic" id="rst-id2">``</span></a><a href="#id3"><span class="rst-problematic" id="rst-id4">`</span></a>python
+# Get the fingerprint of an SSH key
+fingerprint = get_ssh_key_fingerprint(public_key)</p>
+<p># Get the current user's SSH keys
+user_keys = get_user_pub_keys()</p>
+<p># Generate an RSA SSH key pair and save it to disk
+private_key, public_key = generate_ssh_key_pair(filename)</p>
+<p># Add an SSH public key to the current user's RunPod account
+add_ssh_key(public_key)
+<a href="#id5"><span class="rst-problematic" id="rst-id6">``</span></a><a href="#id7"><span class="rst-problematic" id="rst-id8">`</span></a></p>
+</div>
         </div>
 
         <div id="splitTables">
@@ -330,12 +348,12 @@
     
     <td>Function</td>
     <td><code><a href="#get_ssh_key_fingerprint" class="internal-link" title="runpod.cli.groups.ssh.functions.get_ssh_key_fingerprint">get<wbr></wbr>_ssh<wbr></wbr>_key<wbr></wbr>_fingerprint</a></code></td>
-    <td>Get the fingerprint of an SSH key</td>
+    <td>Get the fingerprint of an SSH key.</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#get_user_pub_keys" class="internal-link" title="runpod.cli.groups.ssh.functions.get_user_pub_keys">get<wbr></wbr>_user<wbr></wbr>_pub<wbr></wbr>_keys</a></code></td>
-    <td>Get the current user's SSH keys</td>
+    <td>Get the current user's SSH keys.</td>
   </tr><tr class="constant">
     
     <td>Constant</td>
@@ -362,7 +380,7 @@
     
     
     <span class="py-keyword">def</span> <span class="py-defname">add_ssh_key</span><span class="function-signature">(public_key)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L85">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L127">
       
       (source)
     </a>
@@ -375,7 +393,10 @@
   <div class="docstring functionBody">
     
     <div><p>Add an SSH public key to the current user's RunPod account.
-Checks if the key already exists before adding it.</p></div>
+Checks if the key already exists before adding it.</p>
+<p>Args:
+- public_key (str): The SSH public key to add.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -390,7 +411,7 @@ Checks if the key already exists before adding it.</p></div>
     
     
     <span class="py-keyword">def</span> <span class="py-defname">generate_ssh_key_pair</span><span class="function-signature">(filename)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L58">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L96">
       
       (source)
     </a>
@@ -404,9 +425,12 @@ Checks if the key already exists before adding it.</p></div>
     
     <div><p>Generate an RSA SSH key pair and save it to disk.</p>
 <p>Args:
-- filename (str):   The base filename to save the key pair.</p>
+- filename (str): The base filename to save the key pair.</p>
 <blockquote>
 The public key will have '.pub' appended to it.</blockquote>
+<p>Returns:
+- private_key (paramiko.RSAKey): The generated RSA private key.
+- public_key (str): The generated SSH public key.</p>
 </div>
   </div>
 </div><div class="basefunction">
@@ -422,7 +446,7 @@ The public key will have '.pub' appended to it.</blockquote>
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_ssh_key_fingerprint</span><span class="function-signature">(public_key)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L16">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L40">
       
       (source)
     </a>
@@ -434,7 +458,12 @@ The public key will have '.pub' appended to it.</blockquote>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Get the fingerprint of an SSH key</p></div>
+    <div><p>Get the fingerprint of an SSH key.</p>
+<p>Args:
+- public_key (str): The SSH public key for which to get the fingerprint.</p>
+<p>Returns:
+- fingerprint (str): The SHA256 fingerprint of the SSH key.</p>
+</div>
   </div>
 </div><div class="basefunction">
   
@@ -449,7 +478,7 @@ The public key will have '.pub' appended to it.</blockquote>
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_user_pub_keys</span><span class="function-signature">()</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L29">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L59">
       
       (source)
     </a>
@@ -461,7 +490,16 @@ The public key will have '.pub' appended to it.</blockquote>
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Get the current user's SSH keys</p></div>
+    <div><p>Get the current user's SSH keys.</p>
+<p>Returns:
+- user_keys (list): A list of dictionaries representing the current user's SSH keys.</p>
+<blockquote>
+Each dictionary contains the following keys:
+- type (str): The type of the SSH key.
+- key (str): The value of the SSH key.
+- fingerprint (str): The fingerprint of the SSH key.
+- name (str): The name of the SSH key.</blockquote>
+</div>
   </div>
 </div><div class="baseconstant">
   
@@ -475,7 +513,7 @@ The public key will have '.pub' appended to it.</blockquote>
   <div class="functionHeader">
     
     <span class="py-defname">SSH_FILES</span> =
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L13">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/ssh/functions.py#L37">
       
       (source)
     </a>
@@ -502,7 +540,7 @@ The public key will have '.pub' appended to it.</blockquote>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/runpod/runpod-python" class="projecthome">RunPod</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2023-12-20 16:30:27.
+    23.9.1 at 2023-12-20 16:40:50.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

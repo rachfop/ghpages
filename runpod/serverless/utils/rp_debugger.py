@@ -23,6 +23,35 @@ except KeyError:
 PYTHON_VERSION = platform.python_version()
 
 
+"""
+A singleton class to store checkpoint times.
+
+Format:
+[
+    {
+        'name': 'checkpoint_name',
+        'start': 1234567890.123456,
+        'end': 1234567890.123456
+        'duration_ms': 1234567890.123456
+    },
+]
+
+Usage:
+from rp_debugger import Checkpoints
+
+checkpoints = Checkpoints()
+
+# Add a checkpoint
+checkpoints.add('checkpoint_name')
+
+# Start a checkpoint
+checkpoints.start('checkpoint_name')
+
+# Stop a checkpoint
+checkpoints.stop('checkpoint_name')
+"""
+
+
 class Checkpoints:
     """
     A singleton class to store checkpoint times.
