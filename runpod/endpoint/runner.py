@@ -38,9 +38,7 @@ class RunPodClient:
             RuntimeError: If the API key has not been initialized.
         """
         from runpod import (  # pylint: disable=import-outside-toplevel, cyclic-import
-            api_key,
-            endpoint_url_base,
-        )
+            api_key, endpoint_url_base)
 
         if api_key is None:
             raise RuntimeError(API_KEY_NOT_SET_MSG)

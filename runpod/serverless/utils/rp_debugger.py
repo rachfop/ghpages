@@ -23,62 +23,8 @@ except KeyError:
 PYTHON_VERSION = platform.python_version()
 
 
-"""
-A singleton class to store checkpoint times.
-
-Format:
-[
-    {
-        'name': 'checkpoint_name',
-        'start': 1234567890.123456,
-        'end': 1234567890.123456
-        'duration_ms': 1234567890.123456
-    },
-]
-
-Usage:
-from rp_debugger import Checkpoints
-
-checkpoints = Checkpoints()
-
-# Add a checkpoint
-checkpoints.add('checkpoint_name')
-
-# Start a checkpoint
-checkpoints.start('checkpoint_name')
-
-# Stop a checkpoint
-checkpoints.stop('checkpoint_name')
-"""
-
-
 class Checkpoints:
-    """
-    A singleton class to store checkpoint times.
-
-    Format:
-    [
-        {
-            'name': 'checkpoint_name',
-            'start': 1234567890.123456,
-            'end': 1234567890.123456
-            'duration_ms': 1234567890.123456
-        },
-    ]
-
-    Usage:
-    from rp_debugger import Checkpoints
-
-    checkpoints = Checkpoints()
-
-    # Add a checkpoint
-    checkpoints.add('checkpoint_name')
-
-    # Start a checkpoint
-    checkpoints.start('checkpoint_name')
-
-    # Stop a checkpoint
-    checkpoints.stop('checkpoint_name')
+    """ A singleton class to store checkpoint times.
     """
 
     __instance = None
@@ -102,104 +48,153 @@ class Checkpoints:
 
         self.checkpoints.append({"name": name})
 
-        index = len(self.checkpoints) - 1
-        self.name_lookup[name] = index
+        class Checkpoints:
+            """
+            A class that stores checkpoint times.
 
-    def start(self, name):
-        """
-        Start a checkpoint.
-        """
-        if name not in self.name_lookup:
-            raise KeyError(f"Checkpoint name '{name}' does not exist.")
+            Methods:
+            - add(name): Adds a checkpoint with the given name to the checkpoints list.
+            - start(name): Starts the checkpoint with the given name by recording the start time.
+            - stop(name): Stops the checkpoint with the given name by recording the end time.
+            - get_checkpoints(): Retrieves the results of the checkpoints, including their duration.
+            - clear(): Clears the checkpoints list.
 
-        index = self.name_lookup[name]
-        self.checkpoints[index]["start"] = time.perf_counter()
-        self.checkpoints[index]["start_utc"] = (
-            datetime.datetime.utcnow().isoformat() + "Z"
-        )
+            Fields:
+            - checkpoints: A list to store the checkpoints.
+            - name_lookup: A dictionary to map checkpoint names to their index in the checkpoints list.
+            """
 
-    def stop(self, name):
-        """
-        Stop a checkpoint.
-        """
-        if name not in self.name_lookup:
-            raise KeyError(f"Checkpoint name '{name}' does not exist.")
+            def __init__(self):
+                self.checkpoints = []
+                self.name_lookup = {}
 
-        index = self.name_lookup[name]
+            def add(self, name):
+                """
+                Add a checkpoint with the given name to the checkpoints list.
 
-        if "start" not in self.checkpoints[index]:
-            raise KeyError("Checkpoint has not been started.")
+                Parameters:
+                - name (str): The name of the checkpoint.
 
-        self.checkpoints[index]["end"] = time.perf_counter()
-        self.checkpoints[index]["stop_utc"] = (
-            datetime.datetime.utcnow().isoformat() + "Z"
-        )
+                Raises:
+                - KeyError: If a checkpoint with the same name already exists.
+                """
+                if name in self.name_lookup:
+                    raise KeyError(f"Checkpoint name '{name}' already exists.")
 
-    def get_checkpoints(self):
-        """
-        Get the results of the checkpoints.
-        """
-        results = []
-        for checkpoint in self.checkpoints:
-            if "start" not in checkpoint or "end" not in checkpoint:
-                continue
-            start_time = checkpoint["start"]
-            end_time = checkpoint["end"]
-            checkpoint["duration_ms"] = (end_time - start_time) * 1000
+                self.checkpoints.append({"name": name})
+                index = len(self.checkpoints) - 1
+                self.name_lookup[name] = index
 
-            checkpoint.pop("start")
-            checkpoint.pop("end")
+            def start(self, name):
+                """
+                Start a checkpoint.
 
-            results.append(checkpoint)
+                Parameters:
+                - name (str): The name of the checkpoint.
 
-        return results
+                Raises:
+                - KeyError: If a checkpoint with the given name does not exist.
+                """
+                if name not in self.name_lookup:
+                    raise KeyError(f"Checkpoint name '{name}' does not exist.")
 
-    def clear(self):
-        """
-        Clear the checkpoints.
-        """
-        self.checkpoints = []
-        self.name_lookup = {}
+                index = self.name_lookup[name]
+                self.checkpoints[index]["start"] = time.perf_counter()
+                self.checkpoints[index]["start_utc"] = (
+                    datetime.datetime.utcnow().isoformat() + "Z"
+                )
+
+            def stop(self, name):
+                """
+                Stop a checkpoint.
+
+                Parameters:
+                - name (str): The name of the checkpoint.
+
+                Raises:
+                - KeyError: If a checkpoint with the given name does not exist.
+                - KeyError: If the checkpoint has not been started.
+                """
+                if name not in self.name_lookup:
+                    raise KeyError(f"Checkpoint name '{name}' does not exist.")
+
+                index = self.name_lookup[name]
+
+                if "start" not in self.checkpoints[index]:
+                    raise KeyError("Checkpoint has not been started.")
+
+                self.checkpoints[index]["end"] = time.perf_counter()
+                self.checkpoints[index]["stop_utc"] = (
+                    datetime.datetime.utcnow().isoformat() + "Z"
+                )
+
+            def get_checkpoints(self):
+                """
+                Get the results of the checkpoints.
+
+                Returns:
+                - list: A list of dictionaries representing the checkpoints and their durations.
+                """
+                results = []
+                for checkpoint in self.checkpoints:
+                    if "start" not in checkpoint or "end" not in checkpoint:
+                        continue
+                    start_time = checkpoint["start"]
+                    end_time = checkpoint["end"]
+                    checkpoint["duration_ms"] = (end_time - start_time) * 1000
+
+                    checkpoint.pop("start")
+                    checkpoint.pop("end")
+
+                    results.append(checkpoint)
+
+                return results
+
+            def clear(self):
+                """
+                Clear the checkpoints.
+                """
+                self.checkpoints = []
+                self.name_lookup = {}
 
 
-class LineTimer:
-    """
-    A utility that can be used to time code execution using the with statement.
-    When used the times should be added to the checkpoints object.
-    """
+        class LineTimer:
+            """
+            A utility that can be used to time code execution using the with statement.
+            When used the times should be added to the checkpoints object.
+            """
 
-    def __init__(self, name):
-        self.checkpoints = Checkpoints()
-        self.name = name
-        self.checkpoints.add(self.name)
+            def __init__(self, name):
+                self.checkpoints = Checkpoints()
+                self.name = name
+                self.checkpoints.add(self.name)
 
-    def __enter__(self):
-        self.checkpoints.start(self.name)
+            def __enter__(self):
+                self.checkpoints.start(self.name)
 
-    def __exit__(self, *args):
-        self.checkpoints.stop(self.name)
+            def __exit__(self, *args):
+                self.checkpoints.stop(self.name)
 
 
-class FunctionTimer:  # pylint: disable=too-few-public-methods
-    """
-    A class-based decorator to benchmark a function.
-    """
+        class FunctionTimer:  # pylint: disable=too-few-public-methods
+            """
+            A class-based decorator to benchmark a function.
+            """
 
-    def __init__(self, function):
-        self.function = function
-        self.checkpoints = Checkpoints()
+            def __init__(self, function):
+                self.function = function
+                self.checkpoints = Checkpoints()
 
-    def __call__(self, *args, **kwargs):
-        self.checkpoints.add(self.function.__name__)
+            def __call__(self, *args, **kwargs):
+                self.checkpoints.add(self.function.__name__)
 
-        try:
-            self.checkpoints.start(self.function.__name__)
-            result = self.function(*args, **kwargs)
+                try:
+                    self.checkpoints.start(self.function.__name__)
+                    result = self.function(*args, **kwargs)
 
-        finally:
-            if self.function.__name__ in self.checkpoints.name_lookup:
-                self.checkpoints.stop(self.function.__name__)
-
+                finally:
+                    if self.function.__name__ in self.checkpoints.name_lookup:
+                        self.checkpoints.stop(self.function.__name__)
         return result
 
 

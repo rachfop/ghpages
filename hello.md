@@ -8,4 +8,5 @@ pydoctor \
     --project-base-dir="./runpod/" \
     --docformat=google \
     --intersphinx=https://docs.python.org/3/objects.inv \
+    --intersphinx=https://docs.aiohttp.org/en/stable/objects.inv \
     ./runpod

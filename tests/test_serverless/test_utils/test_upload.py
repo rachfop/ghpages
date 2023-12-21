@@ -7,11 +7,8 @@ import time
 import unittest
 from unittest.mock import MagicMock, Mock, patch
 
-from runpod.serverless.utils import (
-    rp_upload,
-    upload_file_to_bucket,
-    upload_in_memory_object,
-)
+from runpod.serverless.utils import (rp_upload, upload_file_to_bucket,
+                                     upload_in_memory_object)
 from runpod.serverless.utils.rp_upload import get_boto_client
 
 BUCKET_CREDENTIALS = {

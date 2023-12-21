@@ -9,20 +9,19 @@ Functions:
 - generate_ssh_key_pair(filename): Generate an RSA SSH key pair and save it to disk.
 - add_ssh_key(public_key): Add an SSH public key to the current user's RunPod account.
 
-Example Usage:
-```python
-# Get the fingerprint of an SSH key
-fingerprint = get_ssh_key_fingerprint(public_key)
+Example:
 
-# Get the current user's SSH keys
-user_keys = get_user_pub_keys()
+    fingerprint = get_ssh_key_fingerprint(public_key)
 
-# Generate an RSA SSH key pair and save it to disk
-private_key, public_key = generate_ssh_key_pair(filename)
+    # Get the current user's SSH keys
+    user_keys = get_user_pub_keys()
 
-# Add an SSH public key to the current user's RunPod account
-add_ssh_key(public_key)
-```
+    # Generate an RSA SSH key pair and save it to disk
+    private_key, public_key = generate_ssh_key_pair(filename)
+
+    # Add an SSH public key to the current user's RunPod account
+    add_ssh_key(public_key)
+
 
 """
 
@@ -62,11 +61,11 @@ def get_user_pub_keys():
 
     Returns:
     - user_keys (list): A list of dictionaries representing the current user's SSH keys.
-                        Each dictionary contains the following keys:
-                        - type (str): The type of the SSH key.
-                        - key (str): The value of the SSH key.
-                        - fingerprint (str): The fingerprint of the SSH key.
-                        - name (str): The name of the SSH key.
+    Each dictionary contains the following keys:
+    - type (str): The type of the SSH key.
+    - key (str): The value of the SSH key.
+    - fingerprint (str): The fingerprint of the SSH key.
+    - name (str): The name of the SSH key.
     """
     user = get_user()
     keys = "" if user["pubKey"] is None else user["pubKey"]
@@ -99,7 +98,7 @@ def generate_ssh_key_pair(filename):
 
     Args:
     - filename (str): The base filename to save the key pair.
-                      The public key will have '.pub' appended to it.
+    The public key will have '.pub' appended to it.
 
     Returns:
     - private_key (paramiko.RSAKey): The generated RSA private key.

@@ -8,7 +8,8 @@ from typing import Any, Dict
 
 import aiohttp
 
-from runpod.serverless.modules import rp_handler, rp_local, rp_logger, rp_ping, rp_scale
+from runpod.serverless.modules import (rp_handler, rp_local, rp_logger,
+                                       rp_ping, rp_scale)
 
 from .modules.rp_http import send_result, stream_result
 from .modules.rp_job import run_job, run_job_generator

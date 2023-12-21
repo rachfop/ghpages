@@ -15,7 +15,7 @@ CREDENTIAL_FILE = os.path.expanduser("~/.runpod/config.toml")
 def set_credentials(api_key: str, profile: str = "default", overwrite=False) -> None:
     """
     Sets the user's credentials in ~/.runpod/config.toml
-    If profile already exists user must use `update_credentials` instead.
+    If profile already exists user must use update_credentials instead.
 
     Args:
         api_key (str): The user's API key.

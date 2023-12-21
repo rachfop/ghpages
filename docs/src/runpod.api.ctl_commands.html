@@ -514,7 +514,7 @@
     
     
     <span class="py-keyword">def</span> <span class="py-defname">create_endpoint</span><span class="function-signature">(name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, template_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, gpu_ids: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <span class="rst-variable-quote">'</span><span class="rst-variable-string">AMPERE_16</span><span class="rst-variable-quote">'</span>, network_volume_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, locations: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, idle_timeout: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 5, scaler_type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <span class="rst-variable-quote">'</span><span class="rst-variable-string">QUEUE_DELAY</span><span class="rst-variable-quote">'</span>, scaler_value: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 4, workers_min: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 0, workers_max: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 3)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L283">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L282">
       
       (source)
     </a>
@@ -526,9 +526,13 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Create an endpoint</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>endpoint_id = runpod.create_endpoint(<span class="py-string">"test"</span>, <span class="py-string">"template_id"</span>)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the template to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_ids:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the ids of the GPUs to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">network<wbr></wbr>_volume<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the network volume to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">locations:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the locations to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">idle<wbr></wbr>_timeout:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the idle timeout for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scaler<wbr></wbr>_type:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the scaler type for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scaler<wbr></wbr>_value:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the scaler value for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">workers<wbr></wbr>_min:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the minimum number of workers for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">workers<wbr></wbr>_max:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the maximum number of workers for the endpoint</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+    <div><p><blockquote>
+Create an endpoint</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<p class="rst-last">endpoint_id = runpod.create_endpoint("test", "template_id")</p>
+</div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the template to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_ids:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the ids of the GPUs to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">network<wbr></wbr>_volume<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the network volume to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">locations:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the locations to use for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">idle<wbr></wbr>_timeout:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the idle timeout for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scaler<wbr></wbr>_type:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the scaler type for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scaler<wbr></wbr>_value:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the scaler value for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">workers<wbr></wbr>_min:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the minimum number of workers for the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">workers<wbr></wbr>_max:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the maximum number of workers for the endpoint</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -543,7 +547,7 @@
     
     
     <span class="py-keyword">def</span> <span class="py-defname">create_pod</span><span class="function-signature">(name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, image_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, gpu_type_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, cloud_type: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <span class="rst-variable-quote">'</span><span class="rst-variable-string">ALL</span><span class="rst-variable-quote">'</span>, support_public_ip: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> = <a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, start_ssh: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> = <a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, data_center_id: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, country_code: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, gpu_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 1, volume_in_gb: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 0, container_disk_in_gb: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, min_vcpu_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 1, min_memory_in_gb: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 1, docker_args: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <span class="rst-variable-quote">'</span><span class="rst-variable-string"></span><span class="rst-variable-quote">'</span>, ports: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, volume_mount_path: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <span class="rst-variable-quote">'</span><span class="rst-variable-string">/runpod-volume</span><span class="rst-variable-quote">'</span>, env: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, template_id: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, network_volume_id: <code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L89">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L88">
       
       (source)
     </a>
@@ -556,10 +560,13 @@
   <div class="docstring functionBody">
     
     <div><p>Create a pod</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>pod_id = runpod.create_pod(<span class="py-string">"test"</span>, <span class="py-string">"runpod/stack"</span>, <span class="py-string">"NVIDIA GeForce RTX 3070"</span>)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the docker image to be used by the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_type<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the gpu type wanted by the pod (retrievable by get_gpus)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cloud<wbr></wbr>_type:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">if secure cloud, community cloud or all is wanted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">support<wbr></wbr>_public<wbr></wbr>_ip:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start<wbr></wbr>_ssh:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data<wbr></wbr>_center<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the id of the data center</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">country<wbr></wbr>_code:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the code for country to start the pod in</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how many gpus should be attached to the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the pod volume be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">container<wbr></wbr>_disk<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min<wbr></wbr>_vcpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min<wbr></wbr>_memory<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">docker<wbr></wbr>_args:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ports:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the ports to open in the pod, example format - "8888/http,666/tcp"</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_mount<wbr></wbr>_path:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">where to mount the volume?</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>]</code></td><td class="fieldArgDesc">the environment variables to inject into the pod,
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<p class="rst-last">pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")</p>
+</div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the docker image to be used by the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_type<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the gpu type wanted by the pod (retrievable by get_gpus)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cloud<wbr></wbr>_type:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">if secure cloud, community cloud or all is wanted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">support<wbr></wbr>_public<wbr></wbr>_ip:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">start<wbr></wbr>_ssh:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data<wbr></wbr>_center<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the id of the data center</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">country<wbr></wbr>_code:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the code for country to start the pod in</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how many gpus should be attached to the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the pod volume be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">container<wbr></wbr>_disk<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min<wbr></wbr>_vcpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min<wbr></wbr>_memory<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">docker<wbr></wbr>_args:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ports:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the ports to open in the pod, example format - "8888/http,666/tcp"</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_mount<wbr></wbr>_path:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">where to mount the volume?</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>]</code></td><td class="fieldArgDesc">the environment variables to inject into the pod,
 for example {EXAMPLE_VAR:"example_value", EXAMPLE_VAR2:"example_value 2"}, will
-inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the id of the template to use for the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">network<wbr></wbr>_volume<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">the id of the template to use for the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">network<wbr></wbr>_volume<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Optional" class="intersphinx-link">Optional</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -574,7 +581,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">create_template</span><span class="function-signature">(name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, image_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, docker_start_cmd: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, container_disk_in_gb: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 10, volume_in_gb: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, volume_mount_path: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, ports: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, env: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, is_serverless: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> = <a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L227">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L226">
       
       (source)
     </a>
@@ -586,11 +593,15 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Create a template</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>template_id = runpod.create_template(<span class="py-string">"test"</span>, <span class="py-string">"runpod/stack"</span>, <span class="py-string">"python3 main.py"</span>)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the template</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the docker image to be used by the template</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">docker<wbr></wbr>_start<wbr></wbr>_cmd:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the command to start the docker container with</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">container<wbr></wbr>_disk<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the container disk be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the volume be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_mount<wbr></wbr>_path:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">where to mount the volume?</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ports:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the ports to open in the pod, example format - "8888/http,666/tcp"</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></td><td class="fieldArgDesc">the environment variables to inject into the pod,
+    <div><p><blockquote>
+Create a template</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<p class="rst-last">template_id = runpod.create_template("test", "runpod/stack", "python3 main.py")</p>
+</div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the template</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of the docker image to be used by the template</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">docker<wbr></wbr>_start<wbr></wbr>_cmd:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the command to start the docker container with</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">container<wbr></wbr>_disk<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the container disk be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_in<wbr></wbr>_gb:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">how big should the volume be</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">volume<wbr></wbr>_mount<wbr></wbr>_path:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">where to mount the volume?</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ports:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the ports to open in the pod, example format - "8888/http,666/tcp"</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">env:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></td><td class="fieldArgDesc">the environment variables to inject into the pod,
 for example {EXAMPLE_VAR:"example_value", EXAMPLE_VAR2:"example_value 2"}, will
-inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is<wbr></wbr>_serverless:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc">is the template serverless?</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">is<wbr></wbr>_serverless:</span><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc">is the template serverless?</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -605,7 +616,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_endpoints</span><span class="function-signature">() -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L274">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L273">
       
       (source)
     </a>
@@ -632,7 +643,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_gpu</span><span class="function-signature">(gpu_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, gpu_quantity: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 1)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L50">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L49">
       
       (source)
     </a>
@@ -659,7 +670,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_gpus</span><span class="function-signature">() -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L41">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L40">
       
       (source)
     </a>
@@ -686,7 +697,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_pod</span><span class="function-signature">(pod_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L79">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L78">
       
       (source)
     </a>
@@ -713,7 +724,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_pods</span><span class="function-signature">() -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L70">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L69">
       
       (source)
     </a>
@@ -740,7 +751,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">get_user</span><span class="function-signature">() -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L21">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L20">
       
       (source)
     </a>
@@ -767,7 +778,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">resume_pod</span><span class="function-signature">(pod_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, gpu_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L192">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L191">
       
       (source)
     </a>
@@ -779,11 +790,16 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Resume a pod</p>
+    <div><p><blockquote>
+Resume a pod</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<blockquote>
+pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")</blockquote>
 <pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>pod_id = runpod.create_pod(<span class="py-string">"test"</span>, <span class="py-string">"runpod/stack"</span>, <span class="py-string">"NVIDIA GeForce RTX 3070"</span>)
 <span class="py-prompt">&gt;&gt;&gt; </span>runpod.stop_pod(pod_id)
-<span class="py-prompt">&gt;&gt;&gt; </span>runpod.resume_pod(pod_id)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the number of GPUs to attach to the pod</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+<span class="py-prompt">&gt;&gt;&gt; </span>runpod.resume_pod(pod_id)</pre></div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gpu<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the number of GPUs to attach to the pod</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -798,7 +814,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">stop_pod</span><span class="function-signature">(pod_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L175">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L174">
       
       (source)
     </a>
@@ -810,10 +826,15 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Stop a pod</p>
+    <div><p><blockquote>
+Stop a pod</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<blockquote>
+pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")</blockquote>
 <pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>pod_id = runpod.create_pod(<span class="py-string">"test"</span>, <span class="py-string">"runpod/stack"</span>, <span class="py-string">"NVIDIA GeForce RTX 3070"</span>)
-<span class="py-prompt">&gt;&gt;&gt; </span>runpod.stop_pod(pod_id)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+<span class="py-prompt">&gt;&gt;&gt; </span>runpod.stop_pod(pod_id)</pre></div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -828,7 +849,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">terminate_pod</span><span class="function-signature">(pod_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L213">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L212">
       
       (source)
     </a>
@@ -840,10 +861,15 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Terminate a pod</p>
+    <div><p><blockquote>
+Terminate a pod</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<blockquote>
+pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")</blockquote>
 <pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>pod_id = runpod.create_pod(<span class="py-string">"test"</span>, <span class="py-string">"runpod/stack"</span>, <span class="py-string">"NVIDIA GeForce RTX 3070"</span>)
-<span class="py-prompt">&gt;&gt;&gt; </span>runpod.terminate_pod(pod_id)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+<span class="py-prompt">&gt;&gt;&gt; </span>runpod.terminate_pod(pod_id)</pre></div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pod<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the pod</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -858,7 +884,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">update_endpoint_template</span><span class="function-signature">(endpoint_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, template_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L331">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L330">
       
       (source)
     </a>
@@ -870,9 +896,13 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   </div>
   <div class="docstring functionBody">
     
-    <div><p>Update an endpoint template</p>
-<pre class="py-doctest">
-<span class="py-prompt">&gt;&gt;&gt; </span>endpoint_id = runpod.update_endpoint_template(<span class="py-string">"test"</span>, <span class="py-string">"template_id"</span>)</pre><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">endpoint<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the template to use for the endpoint</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Unknown Field: example</td></tr><tr><td colspan="2"></td></tr></table></div>
+    <div><p><blockquote>
+Update an endpoint template</blockquote>
+<div class="rst-admonition rst-admonition-example">
+<p class="rst-first rst-admonition-title">Example</p>
+<p class="rst-last">endpoint_id = runpod.update_endpoint_template("test", "template_id")</p>
+</div>
+</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">endpoint<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the endpoint</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">template<wbr></wbr>_id:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the id of the template to use for the endpoint</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -887,7 +917,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
     
     
     <span class="py-keyword">def</span> <span class="py-defname">update_user_settings</span><span class="function-signature">(pubkey: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L30">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/api/ctl_commands.py#L29">
       
       (source)
     </a>
@@ -913,7 +943,7 @@ inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values</td><
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/runpod/runpod-python" class="projecthome">RunPod</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2023-12-20 16:40:50.
+    23.9.1 at 2023-12-20 17:11:21.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

@@ -63,7 +63,7 @@ class JobScaler:
         Retrieve multiple jobs from the server in parallel using concurrent requests.
 
         Returns:
-            List[Any]: A list of job data retrieved from the server.
+            list[any]: A list of job data retrieved from the server.
         """
         while True:
             if not self.is_alive():

@@ -354,7 +354,7 @@
     
     @project_cli.command(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">deploy</span><span class="rst-variable-quote">'</span>)<br />
     <span class="py-keyword">def</span> <span class="py-defname">deploy_project</span><span class="function-signature">()</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L146">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L147">
       
       (source)
     </a>
@@ -381,7 +381,7 @@
     
     @project_cli.command(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">new</span><span class="rst-variable-quote">'</span>)<br />@click.option(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--name</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">-n</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">project_name</span><span class="rst-variable-quote">'</span>, <wbr></wbr>type=<a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr>default=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, <wbr></wbr>help=<span class="rst-variable-quote">'</span><span class="rst-variable-string">The project name.</span><span class="rst-variable-quote">'</span>)<br />@click.option(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--type</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">-t</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">model_type</span><span class="rst-variable-quote">'</span>, <wbr></wbr>type=click.Choice(<wbr></wbr>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">llama2</span><span class="rst-variable-quote">'</span>], <wbr></wbr>case_sensitive=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>), <wbr></wbr>default=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, <wbr></wbr>help=<span class="rst-variable-quote">'</span><span class="rst-variable-string">The type of Hugging Face model.</span><span class="rst-variable-quote">'</span>)<br />@click.option(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--model</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">-m</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">model_name</span><span class="rst-variable-quote">'</span>, <wbr></wbr>type=<a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr>default=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, <wbr></wbr>help=<span class="rst-variable-quote">'</span><span class="rst-variable-string">The name of the Hugging Face model. (e.g. meta-llama/Llama-2-7b)</span><span class="rst-variable-quote">'</span>)<br />@click.option(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">--init</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">-i</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">init_current_dir</span><span class="rst-variable-quote">'</span>, <wbr></wbr>is_flag=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, <wbr></wbr>default=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)<br />
     <span class="py-keyword">def</span> <span class="py-defname">new_project_wizard</span><span class="function-signature">(project_name, model_type, model_name, init_current_dir)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L23">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L24">
       
       (source)
     </a>
@@ -408,7 +408,7 @@
     
     @click.group(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">project</span><span class="rst-variable-quote">'</span>, <wbr></wbr>help=<span class="rst-variable-quote">'</span><span class="rst-variable-string">Create, deploy, and manage RunPod projects.</span><span class="rst-variable-quote">'</span>)<br />
     <span class="py-keyword">def</span> <span class="py-defname">project_cli</span><span class="function-signature">()</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L17">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L18">
       
       (source)
     </a>
@@ -435,7 +435,7 @@
     
     @project_cli.command(<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">start</span><span class="rst-variable-quote">'</span>)<br />
     <span class="py-keyword">def</span> <span class="py-defname">start_project_pod</span><span class="function-signature">()</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L125">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/cli/groups/project/commands.py#L126">
       
       (source)
     </a>
@@ -461,7 +461,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/runpod/runpod-python" class="projecthome">RunPod</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2023-12-20 16:40:50.
+    23.9.1 at 2023-12-20 17:11:21.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

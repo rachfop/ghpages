@@ -6,14 +6,12 @@ from unittest.mock import mock_open, patch
 import click
 
 from runpod import error as rp_error
-from runpod.cli.groups.project.helpers import (
-    attempt_pod_launch,
-    copy_template_files,
-    get_project_endpoint,
-    get_project_pod,
-    load_project_config,
-    validate_project_name,
-)
+from runpod.cli.groups.project.helpers import (attempt_pod_launch,
+                                               copy_template_files,
+                                               get_project_endpoint,
+                                               get_project_pod,
+                                               load_project_config,
+                                               validate_project_name)
 
 
 class TestHelpers(unittest.TestCase):

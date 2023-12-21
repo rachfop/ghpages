@@ -177,46 +177,6 @@
             </div>
         
 
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="#clear" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.clear">clear</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="#get_checkpoints" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.get_checkpoints">get<wbr></wbr>_checkpoints</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="#start" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.start">start</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="#stop" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.stop">stop</a></code>
-            </div>
-        
-
     </li>
 </ul> 
 
@@ -286,26 +246,6 @@
 
         
             <div class="itemName"><code><a href="runpod.serverless.utils.rp_debugger.Checkpoints.html" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints"><wbr></wbr>Checkpoints</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="runpod.serverless.utils.rp_debugger.FunctionTimer.html" class="internal-link" title="runpod.serverless.utils.rp_debugger.FunctionTimer"><wbr></wbr>Function<wbr></wbr>Timer</a></code>
-            </div>
-        
-
-    </li><li class="">
-        
-        
-        
-
-        
-            <div class="itemName"><code><a href="runpod.serverless.utils.rp_debugger.LineTimer.html" class="internal-link" title="runpod.serverless.utils.rp_debugger.LineTimer"><wbr></wbr>Line<wbr></wbr>Timer</a></code>
             </div>
         
 
@@ -410,35 +350,12 @@
         </div>
 
         <div class="extrasDocstring">
-          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Checkpoints</span>: <a href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L55" class="sourceLink">(source)</a></code></p>
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Checkpoints</span>: <a href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L26" class="sourceLink">(source)</a></code></p>
           <p><a href="classIndex.html#runpod.serverless.utils.rp_debugger.Checkpoints">View In Hierarchy</a></p>
         </div>
 
         <div class="moduleDocstring">
-          <div><p>A singleton class to store checkpoint times.</p>
-<p>Format:
-[</p>
-<blockquote>
-<dl class="rst-docutils">
-<dt>{</dt>
-<dd>'name': 'checkpoint_name',
-'start': 1234567890.123456,
-'end': 1234567890.123456
-'duration_ms': 1234567890.123456</dd>
-</dl>
-<p>},</p>
-</blockquote>
-<p>]</p>
-<p>Usage:
-from rp_debugger import Checkpoints</p>
-<p>checkpoints = Checkpoints()</p>
-<p># Add a checkpoint
-checkpoints.add('checkpoint_name')</p>
-<p># Start a checkpoint
-checkpoints.start('checkpoint_name')</p>
-<p># Stop a checkpoint
-checkpoints.stop('checkpoint_name')</p>
-</div>
+          <div><p>A singleton class to store checkpoint times.</p></div>
         </div>
 
         <div id="splitTables">
@@ -455,34 +372,14 @@ checkpoints.stop('checkpoint_name')</p>
     <td>Method</td>
     <td><code><a href="#add" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.add">add</a></code></td>
     <td>Add a checkpoint. Returns the index of the checkpoint.</td>
-  </tr><tr class="method">
+  </tr><tr class="classvariable">
     
-    <td>Method</td>
-    <td><code><a href="#clear" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.clear">clear</a></code></td>
-    <td>Clear the checkpoints.</td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#get_checkpoints" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.get_checkpoints">get<wbr></wbr>_checkpoints</a></code></td>
-    <td>Get the results of the checkpoints.</td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#start" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.start">start</a></code></td>
-    <td>Start a checkpoint.</td>
-  </tr><tr class="method">
-    
-    <td>Method</td>
-    <td><code><a href="#stop" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.stop">stop</a></code></td>
-    <td>Stop a checkpoint.</td>
-  </tr><tr class="instancevariable">
-    
-    <td>Instance Variable</td>
+    <td>Class Variable</td>
     <td><code><a href="#checkpoints" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.checkpoints">checkpoints</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
-  </tr><tr class="instancevariable">
+  </tr><tr class="classvariable">
     
-    <td>Instance Variable</td>
+    <td>Class Variable</td>
     <td><code><a href="#name_lookup" class="internal-link" title="runpod.serverless.utils.rp_debugger.Checkpoints.name_lookup">name<wbr></wbr>_lookup</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="classvariable private">
@@ -511,7 +408,7 @@ checkpoints.stop('checkpoint_name')</p>
     
     
     <span class="py-keyword">def</span> <span class="py-defname">__new__</span><span class="function-signature">(cls)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L88">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L34">
       
       (source)
     </a>
@@ -538,7 +435,7 @@ checkpoints.stop('checkpoint_name')</p>
     
     
     <span class="py-keyword">def</span> <span class="py-defname">add</span><span class="function-signature">(self, name)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L95">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L41">
       
       (source)
     </a>
@@ -553,115 +450,7 @@ checkpoints.stop('checkpoint_name')</p>
     <div><p>Add a checkpoint.
 Returns the index of the checkpoint.</p></div>
   </div>
-</div><div class="basemethod">
-  
-  
-  <a name="runpod.serverless.utils.rp_debugger.Checkpoints.clear">
-    
-  </a>
-  <a name="clear">
-    
-  </a>
-  <div class="functionHeader">
-    
-    
-    <span class="py-keyword">def</span> <span class="py-defname">clear</span><span class="function-signature">(self)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L157">
-      
-      (source)
-    </a>
-    <a class="headerLink" href="#clear" title="runpod.serverless.utils.rp_debugger.Checkpoints.clear">
-      
-      
-      ¶
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    <div><p>Clear the checkpoints.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  
-  <a name="runpod.serverless.utils.rp_debugger.Checkpoints.get_checkpoints">
-    
-  </a>
-  <a name="get_checkpoints">
-    
-  </a>
-  <div class="functionHeader">
-    
-    
-    <span class="py-keyword">def</span> <span class="py-defname">get_checkpoints</span><span class="function-signature">(self)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L138">
-      
-      (source)
-    </a>
-    <a class="headerLink" href="#get_checkpoints" title="runpod.serverless.utils.rp_debugger.Checkpoints.get_checkpoints">
-      
-      
-      ¶
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    <div><p>Get the results of the checkpoints.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  
-  <a name="runpod.serverless.utils.rp_debugger.Checkpoints.start">
-    
-  </a>
-  <a name="start">
-    
-  </a>
-  <div class="functionHeader">
-    
-    
-    <span class="py-keyword">def</span> <span class="py-defname">start</span><span class="function-signature">(self, name)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L108">
-      
-      (source)
-    </a>
-    <a class="headerLink" href="#start" title="runpod.serverless.utils.rp_debugger.Checkpoints.start">
-      
-      
-      ¶
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    <div><p>Start a checkpoint.</p></div>
-  </div>
-</div><div class="basemethod">
-  
-  
-  <a name="runpod.serverless.utils.rp_debugger.Checkpoints.stop">
-    
-  </a>
-  <a name="stop">
-    
-  </a>
-  <div class="functionHeader">
-    
-    
-    <span class="py-keyword">def</span> <span class="py-defname">stop</span><span class="function-signature">(self, name)</span>:
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L121">
-      
-      (source)
-    </a>
-    <a class="headerLink" href="#stop" title="runpod.serverless.utils.rp_debugger.Checkpoints.stop">
-      
-      
-      ¶
-    </a>
-  </div>
-  <div class="docstring functionBody">
-    
-    <div><p>Stop a checkpoint.</p></div>
-  </div>
-</div><div class="baseinstancevariable">
+</div><div class="baseclassvariable">
   
   
   <a name="runpod.serverless.utils.rp_debugger.Checkpoints.checkpoints">
@@ -673,7 +462,7 @@ Returns the index of the checkpoint.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">checkpoints</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L85">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L31">
       
       (source)
     </a>
@@ -688,7 +477,7 @@ Returns the index of the checkpoint.</p></div>
     <div><p class="undocumented">Undocumented</p></div>
     
   </div>
-</div><div class="baseinstancevariable">
+</div><div class="baseclassvariable">
   
   
   <a name="runpod.serverless.utils.rp_debugger.Checkpoints.name_lookup">
@@ -700,7 +489,7 @@ Returns the index of the checkpoint.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">name_lookup</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L86">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L32">
       
       (source)
     </a>
@@ -727,7 +516,7 @@ Returns the index of the checkpoint.</p></div>
   <div class="functionHeader">
     
     <span class="py-defname">__instance</span> =
-    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L84">
+    <a class="sourceLink" href="https://github.com/runpod/runpod-python/serverless/utils/rp_debugger.py#L30">
       
       (source)
     </a>
@@ -754,7 +543,7 @@ Returns the index of the checkpoint.</p></div>
   <div class="container">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/runpod/runpod-python" class="projecthome">RunPod</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    23.9.1 at 2023-12-20 16:40:50.
+    23.9.1 at 2023-12-20 17:11:21.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

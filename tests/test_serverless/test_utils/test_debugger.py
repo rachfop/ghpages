@@ -8,13 +8,10 @@ import unittest
 from unittest.mock import patch
 
 from runpod.serverless.utils import rp_debugger
-from runpod.serverless.utils.rp_debugger import (
-    Checkpoints,
-    FunctionTimer,
-    LineTimer,
-    clear_debugger_output,
-    get_debugger_output,
-)
+from runpod.serverless.utils.rp_debugger import (Checkpoints, FunctionTimer,
+                                                 LineTimer,
+                                                 clear_debugger_output,
+                                                 get_debugger_output)
 
 
 class TestDebugger(unittest.TestCase):

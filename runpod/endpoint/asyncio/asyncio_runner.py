@@ -15,9 +15,7 @@ class Job:
 
     def __init__(self, endpoint_id: str, job_id: str, session: aiohttp.ClientSession):
         from runpod import (  # pylint: disable=import-outside-toplevel,cyclic-import
-            api_key,
-            endpoint_url_base,
-        )
+            api_key, endpoint_url_base)
 
         self.endpoint_id = endpoint_id
         self.job_id = job_id
@@ -67,10 +65,8 @@ class Endpoint:
     """Class for running endpoint"""
 
     def __init__(self, endpoint_id: str, session: aiohttp.ClientSession):
-        from runpod import (
-            api_key,  # pylint: disable=import-outside-toplevel
-            endpoint_url_base,
-        )
+        from runpod import api_key  # pylint: disable=import-outside-toplevel
+        from runpod import endpoint_url_base
 
         self.endpoint_id = endpoint_id
         self.endpoint_url = f"{endpoint_url_base}/{self.endpoint_id}/run"

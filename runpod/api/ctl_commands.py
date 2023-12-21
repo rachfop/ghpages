@@ -6,7 +6,6 @@ RunPod | API Wrapper | CTL Commands
 from typing import Optional
 
 from .graphql import run_graphql_query
-
 # Templates
 from .mutations import endpoints as endpoint_mutations
 from .mutations import pods as pod_mutations
@@ -125,9 +124,9 @@ def create_pod(
                 inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values
     :param template_id: the id of the template to use for the pod
 
-    :example:
+    Example:
 
-    >>> pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
+        pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
     """
     # Input Validation
     get_gpu(gpu_type_id)  # Check if GPU exists, will raise ValueError if not.
@@ -174,14 +173,14 @@ def create_pod(
 
 def stop_pod(pod_id: str):
     """
-    Stop a pod
+     Stop a pod
 
-    :param pod_id: the id of the pod
+     :param pod_id: the id of the pod
 
-    :example:
+    Example:
 
-    >>> pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
-    >>> runpod.stop_pod(pod_id)
+      pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
+     >>> runpod.stop_pod(pod_id)
     """
     raw_response = run_graphql_query(pod_mutations.generate_pod_stop_mutation(pod_id))
 
@@ -191,16 +190,16 @@ def stop_pod(pod_id: str):
 
 def resume_pod(pod_id: str, gpu_count: int):
     """
-    Resume a pod
+     Resume a pod
 
-    :param pod_id: the id of the pod
-    :param gpu_count: the number of GPUs to attach to the pod
+     :param pod_id: the id of the pod
+     :param gpu_count: the number of GPUs to attach to the pod
 
-    :example:
+    Example:
 
-    >>> pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
-    >>> runpod.stop_pod(pod_id)
-    >>> runpod.resume_pod(pod_id)
+      pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
+     >>> runpod.stop_pod(pod_id)
+     >>> runpod.resume_pod(pod_id)
     """
     raw_response = run_graphql_query(
         pod_mutations.generate_pod_resume_mutation(pod_id, gpu_count)
@@ -212,14 +211,14 @@ def resume_pod(pod_id: str, gpu_count: int):
 
 def terminate_pod(pod_id: str):
     """
-    Terminate a pod
+     Terminate a pod
 
-    :param pod_id: the id of the pod
+     :param pod_id: the id of the pod
 
-    :example:
+    Example:
 
-    >>> pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
-    >>> runpod.terminate_pod(pod_id)
+      pod_id = runpod.create_pod("test", "runpod/stack", "NVIDIA GeForce RTX 3070")
+     >>> runpod.terminate_pod(pod_id)
     """
     run_graphql_query(pod_mutations.generate_pod_terminate_mutation(pod_id))
 
@@ -236,23 +235,23 @@ def create_template(
     is_serverless: bool = False,
 ):
     """
-    Create a template
+     Create a template
 
-    :param name: the name of the template
-    :param image_name: the name of the docker image to be used by the template
-    :param docker_start_cmd: the command to start the docker container with
-    :param container_disk_in_gb: how big should the container disk be
-    :param volume_in_gb: how big should the volume be
-    :param ports: the ports to open in the pod, example format - "8888/http,666/tcp"
-    :param volume_mount_path: where to mount the volume?
-    :param env: the environment variables to inject into the pod,
-                for example {EXAMPLE_VAR:"example_value", EXAMPLE_VAR2:"example_value 2"}, will
-                inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values
-    :param is_serverless: is the template serverless?
+     :param name: the name of the template
+     :param image_name: the name of the docker image to be used by the template
+     :param docker_start_cmd: the command to start the docker container with
+     :param container_disk_in_gb: how big should the container disk be
+     :param volume_in_gb: how big should the volume be
+     :param ports: the ports to open in the pod, example format - "8888/http,666/tcp"
+     :param volume_mount_path: where to mount the volume?
+     :param env: the environment variables to inject into the pod,
+                 for example {EXAMPLE_VAR:"example_value", EXAMPLE_VAR2:"example_value 2"}, will
+                 inject EXAMPLE_VAR and EXAMPLE_VAR2 into the pod with the mentioned values
+     :param is_serverless: is the template serverless?
 
-    :example:
+    Example:
 
-    >>> template_id = runpod.create_template("test", "runpod/stack", "python3 main.py")
+     template_id = runpod.create_template("test", "runpod/stack", "python3 main.py")
     """
     raw_response = run_graphql_query(
         template_mutations.generate_pod_template(
@@ -293,22 +292,22 @@ def create_endpoint(
     workers_max: int = 3,
 ):
     """
-    Create an endpoint
+     Create an endpoint
 
-    :param name: the name of the endpoint
-    :param template_id: the id of the template to use for the endpoint
-    :param gpu_ids: the ids of the GPUs to use for the endpoint
-    :param network_volume_id: the id of the network volume to use for the endpoint
-    :param locations: the locations to use for the endpoint
-    :param idle_timeout: the idle timeout for the endpoint
-    :param scaler_type: the scaler type for the endpoint
-    :param scaler_value: the scaler value for the endpoint
-    :param workers_min: the minimum number of workers for the endpoint
-    :param workers_max: the maximum number of workers for the endpoint
+     :param name: the name of the endpoint
+     :param template_id: the id of the template to use for the endpoint
+     :param gpu_ids: the ids of the GPUs to use for the endpoint
+     :param network_volume_id: the id of the network volume to use for the endpoint
+     :param locations: the locations to use for the endpoint
+     :param idle_timeout: the idle timeout for the endpoint
+     :param scaler_type: the scaler type for the endpoint
+     :param scaler_value: the scaler value for the endpoint
+     :param workers_min: the minimum number of workers for the endpoint
+     :param workers_max: the maximum number of workers for the endpoint
 
-    :example:
+    Example:
 
-    >>> endpoint_id = runpod.create_endpoint("test", "template_id")
+      endpoint_id = runpod.create_endpoint("test", "template_id")
     """
     raw_response = run_graphql_query(
         endpoint_mutations.generate_endpoint_mutation(
@@ -330,14 +329,14 @@ def create_endpoint(
 
 def update_endpoint_template(endpoint_id: str, template_id: str):
     """
-    Update an endpoint template
+     Update an endpoint template
 
-    :param endpoint_id: the id of the endpoint
-    :param template_id: the id of the template to use for the endpoint
+     :param endpoint_id: the id of the endpoint
+     :param template_id: the id of the template to use for the endpoint
 
-    :example:
+    Example:
 
-    >>> endpoint_id = runpod.update_endpoint_template("test", "template_id")
+      endpoint_id = runpod.update_endpoint_template("test", "template_id")
     """
     raw_response = run_graphql_query(
         endpoint_mutations.update_endpoint_template_mutation(endpoint_id, template_id)

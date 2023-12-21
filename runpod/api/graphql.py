@@ -16,7 +16,8 @@ def run_graphql_query(query: str) -> Dict[str, Any]:
     """
     Run a GraphQL query
     """
-    from runpod import api_key  # pylint: disable=import-outside-toplevel, cyclic-import
+    from runpod import \
+        api_key  # pylint: disable=import-outside-toplevel, cyclic-import
 
     url = f"https://api.runpod.io/graphql?api_key={api_key}"
     headers = {
