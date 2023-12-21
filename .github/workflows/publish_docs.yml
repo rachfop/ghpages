@@ -24,13 +24,13 @@ jobs:
         # Run pydoctor build
         pydoctor \
         --project-name=RunPod \
-        --project-version=1.4.0 \
         --project-url=https://github.com/$GITHUB_REPOSITORY \
         --html-viewsource-base=https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA \
         --make-html \
-        --html-output=docs/src \
+        --html-output=./apidocs \
         --project-base-dir="./runpod/" \
         --docformat=google \
+        --intersphinx=https://docs.aiohttp.org/en/stable/objects.inv
         --intersphinx=https://docs.python.org/3/objects.inv \
         ./runpod
 
